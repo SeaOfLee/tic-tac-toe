@@ -1,1 +1,65 @@
-/*CSS File for TTT*/
+#container {
+  background-color: #CCCCCC;
+  height: 800px;
+  width: 800px;
+  margin: auto;
+}
+
+#header {
+  text-align: center;
+  width: 600px;
+  height: 100px;
+  margin: auto;
+  background-color: #FFFFFF;
+}
+
+#main {
+  width: 600px;
+  height: 600px;
+  background-color: #CCFFCC;
+  margin: auto;
+}
+
+#main div {
+  width: 200px;
+  height: 200px;
+  background-color: #33CCFF;
+  display: inline-block;
+  border-radius: ;
+}
+
+#topLeft {
+  float: left;
+}
+
+#topMid {
+  clear: right;
+}
+
+#topRight {
+  float: right;
+}
+
+#midLeft {
+  float: left;
+}
+
+#midMid {
+  clear: right;
+}
+
+#midRight {
+  float: right;
+}
+
+#botLeft {
+  float: left;
+}
+
+#botMid {
+  clear: right;
+}
+
+#botRight {
+  float: right;
+}
