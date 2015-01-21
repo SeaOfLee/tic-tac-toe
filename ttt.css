@@ -25,10 +25,11 @@
   height: 200px;
   background-color: #33CCFF;
   display: inline-block;
-  border-radius: ;
+  float: left;
+  /*border-radius: 25px;*/
 }
 
-#topLeft {
+/*#topLeft {
   float: left;
 }
 
@@ -62,4 +63,11 @@
 
 #botRight {
   float: right;
-}
+}*/
+
+/*#horizontal1 {
+  position: absolute;
+  width: 600px;
+  height: 2px;
+  background-color: black;
+}*/
