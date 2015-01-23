@@ -13,6 +13,8 @@ box7 = [];
 box8 = [];
 box9 = [];
 
+var roundNum = 0;
+
 // declares each div element as a variable by ID.
 
 var topLeft = document.getElementById("topLeft");
@@ -41,6 +43,8 @@ topLeft.onclick = function() {
     box1.push(2);
     console.log("p2 chose box 1");
   }
+  roundNum++;
+  this.onclick = null;
   checkWin();
   turn();
 };
@@ -57,6 +61,7 @@ topMid.onclick = function() {
     box2.push(2);
     console.log("p2 chose box 2");
   }
+  this.onclick = null;
   checkWin();
   turn();
 };
@@ -73,6 +78,7 @@ topRight.onclick = function() {
     box3.push(2);
     console.log("p2 chose box 3");
   }
+  this.onclick = null;
   checkWin();
   turn();
 };
@@ -89,6 +95,7 @@ midLeft.onclick = function() {
     box4.push(2);
     console.log("p2 chose box 4");
   }
+  this.onclick = null;
   checkWin();
   turn();
   };
@@ -105,6 +112,7 @@ midMid.onclick = function() {
     box5.push(2);
     console.log("p2 chose box 5");
   }
+  this.onclick = null;
   checkWin();
   turn();
 };
@@ -121,6 +129,7 @@ midRight.onclick = function() {
     box6.push(2);
     console.log("p2 chose box 6");
   }
+  this.onclick = null;
   checkWin();
   turn();
   
@@ -138,6 +147,7 @@ botLeft.onclick = function() {
     box7.push(2);
     console.log("p2 chose box 8");
   }
+  this.onclick = null;
   checkWin();
   turn();
 };
@@ -155,6 +165,7 @@ botMid.onclick = function() {
     console.log("p2 chose box 8");
 
   }
+  this.onclick = null;
   checkWin();
   turn();
 };
@@ -171,6 +182,7 @@ botRight.onclick = function() {
     box9.push(2);
     console.log("p2 chose box 9");
   }
+  this.onclick = null;
   checkWin();
   turn();
 };
@@ -248,6 +260,4 @@ function checkWin(){
     alert("player 2 wins");  
   }  
 }   
-
- //takes taken boxes out of the mix
 
