@@ -29,6 +29,12 @@
   /*border-radius: 25px;*/
 }
 
+.boxes {
+  text-align: center;
+  font-size: 80px;
+  padding-top: 40px;
+}
+
 /*#topLeft {
   border-bottom: 2px solid white;
   border-right: 2px solid white;
