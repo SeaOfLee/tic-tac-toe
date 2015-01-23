@@ -13,10 +13,7 @@ box7 = [];
 box8 = [];
 box9 = [];
 
-var roundNum = 0;
-if (roundNum == 9) {
-  alert("tie");
-}
+var allBoxes = [box1, box2, box3, box4, box5, box6, box7, box8, box9];
 
 // declares each div element as a variable by ID.
 
@@ -29,10 +26,17 @@ var midRight = document.getElementById("midRight");
 var botLeft = document.getElementById("botLeft");
 var botMid = document.getElementById("botMid");
 var botRight = document.getElementById("botRight");
-// var boxes = document.getElementsByClassName("boxes");
+var boxes = document.getElementsByClassName("boxes");
 
 //uses onclick event handler to fill "empty" divs with X and O.
 //Click also pushes corresponding number into p1/p2Choices arrays.  
+
+// function clickedSquare() {
+//     if(player == 1) {
+//         this.innerHTML = "X";
+//     } else {
+//         this.innerHTML = "O";
+//     }
 
 topLeft.onclick = function() {
   console.log("clicked top left");
@@ -201,66 +205,96 @@ function turn() {
   else {
     player ++; 
   }
-  roundNum++;
 }
 
 // Game logic determines winner by checking if p1 or p2Choices arrays contain the appropriate numbers. 
+var p1Won = false;
+var p2Won = false;
 
 function checkWin(){
-  // horizontal wins
+  // checks for horizontal wins
   if((box1[0] === 1) && (box2[0] === 1) && (box3[0] === 1)) {
-    alert("player 1 wins");
+    p1Wins();
   }
   if((box1[0] === 2) && (box2[0] === 2) && (box3[0] === 2)) {
-    alert("player 2 wins");
-  }
+    p2Wins(); 
+  }    
   if((box4[0] === 1) && (box5[0] === 1) && (box6[0] === 1)) {
-    alert("player 1 wins");
+    p1Wins();
   }  
   if((box4[0] === 2) && (box5[0] === 2) && (box6[0] === 2)) {
-    alert("player 2 wins");  
+    p2Wins();
   }  
   if((box7[0] === 1) && (box8[0] === 1) && (box9[0] === 1)) {
-    alert("player 1 wins");
+    p1Wins();
   }
   if((box7[0] === 2) && (box8[0] === 2) && (box9[0] === 2)) {
-    alert("player 2 wins");
+    p2Wins();  
    }
 
-   // vertical wins
+   // checks for vertical wins
 
   if((box1[0] === 1) && (box4[0] === 1) && (box7[0] === 1)) {
-    alert("player 1 wins");
+    p1Wins();
   }
   if((box1[0] === 2) && (box4[0] === 2) && (box7[0] === 2)) {
-    alert("player 2 wins");
+    p2Wins();
   }
   if((box2[0] === 1) && (box5[0] === 1) && (box8[0] === 1)) {
-    alert("player 1 wins");
+    p1Wins();
   }  
   if((box2[0] === 2) && (box5[0] === 2) && (box8[0] === 2)) {
-    alert("player 2 wins");  
+    p2Wins();
   }  
   if((box3[0] === 1) && (box6[0] === 1) && (box9[0] === 1)) {
-    alert("player 1 wins");
+    p1Wins();
   }
   if((box3[0] === 2) && (box6[0] === 2) && (box9[0] === 2)) {
-    alert("player 2 wins");
+    p2Wins();
    }
 
-   // diagonal wins
+   // checks for diagonal wins
 
-   if((box1[0] === 1) && (box5[0] === 1) && (box9[0] === 1)) {
-    alert("player 1 wins");
+  if((box1[0] === 1) && (box5[0] === 1) && (box9[0] === 1)) {
+    p1Wins();
   }
   if((box1[0] === 2) && (box5[0] === 2) && (box9[0] === 2)) {
-    alert("player 2 wins");
+    p2Wins();
   }
   if((box3[0] === 1) && (box5[0] === 1) && (box7[0] === 1)) {
-    alert("player 1 wins");
+    p1Wins();
   }  
   if((box3[0] === 2) && (box5[0] === 2) && (box7[0] === 2)) {
-    alert("player 2 wins");  
-  }
-}   
+    p2Wins();
+  }  
+}
 
+
+function p1Wins() {
+  p1Won = true;
+  alert("Player 1 Wins!");
+  roundNum = 0;
+}
+
+function p2Wins() {
+  p2Won = true;
+  alert("Player 2 Wins!");
+  roundNum = 0;
+ } 
+
+function clearBoxes() {
+for(i = 0; i < allBoxes.length-1; i++)
+  allBoxes[i][0] = [];
+}
+
+function resetBoxes() {
+  topLeft.innerHTML = "";
+  topMid.innerHTML = "";
+  topRight.innerHTML = "";
+  midLeft.innerHTML = "";
+  midMid.innerHTML = "";
+  midRight.innerHTML = "";
+  botLeft.innerHTML = "";
+  botMid.innerHTML = "";
+  botRight.innerHTML = "";
+}
