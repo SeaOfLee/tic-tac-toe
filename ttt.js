@@ -1,7 +1,17 @@
 
 // declares empty arrays that will store player choices
-var p1Choices = [];
-var p2Choices = [];
+
+var box1, box2, box3, box4, box5, box6, box7, box8, box9;
+
+box1 = [];
+box2 = [];
+box3 = [];
+box4 = [];
+box5 = [];
+box6 = [];
+box7 = [];
+box8 = [];
+box9 = [];
 
 // declares each div element as a variable by ID.
 
@@ -23,14 +33,15 @@ topLeft.onclick = function() {
   console.log("clicked top left");
   if (player == 1) {
     topLeft.innerHTML = "X";
-    p1Choices.push(0);
-    console.log(p1Choices);
+    box1.push(1);
+    console.log("p1 chose box 1");
   }
   else {
     topLeft.innerHTML = "O";
-    p2Choices.push(0);
-    console.log(p2Choices);
+    box1.push(2);
+    console.log("p2 chose box 1");
   }
+  checkWin();
   turn();
 };
 
@@ -38,14 +49,15 @@ topMid.onclick = function() {
   console.log("clicked top middle");
   if (player == 1) {
     topMid.innerHTML = "X";
-    p1Choices.push(1);
-    console.log(p1Choices);
+    box2.push(1);
+    console.log("p1 chose box 2");
   }
   else {
     topMid.innerHTML = "O";
-    p2Choices.push(1);
-    console.log(p2Choices);
+    box2.push(2);
+    console.log("p2 chose box 2");
   }
+  checkWin();
   turn();
 };
 
@@ -53,14 +65,15 @@ topRight.onclick = function() {
   console.log("clicked top right");
   if (player == 1) {
     topRight.innerHTML = "X";
-    p1Choices.push(2);
-    console.log(p1Choices);
+    box3.push(1);
+    console.log("p1 chose box 3");
   }
   else {
     topRight.innerHTML = "O";
-    p2Choices.push(2);
-    console.log(p2Choices);
+    box3.push(2);
+    console.log("p2 chose box 3");
   }
+  checkWin();
   turn();
 };
 
@@ -68,29 +81,31 @@ midLeft.onclick = function() {
   console.log("clicked middle left");
   if (player == 1) {
     midLeft.innerHTML = "X";
-    p1Choices.push(3);
-    console.log(p1Choices);
+    box4.push(1);
+    console.log("p1 chose box 4");
   }
   else {
     midLeft.innerHTML = "O";
-    p2Choices.push(3);
-    console.log(p2Choices);
+    box4.push(2);
+    console.log("p2 chose box 4");
   }
+  checkWin();
   turn();
-};
+  };
 
 midMid.onclick = function() {
   console.log("clicked middle square");
   if (player == 1) {
     midMid.innerHTML = "X";
-    p1Choices.push(4);
-    console.log(p1Choices);
+    box5.push(1);
+    console.log("p1 chose box 5");
   }
   else {
     midMid.innerHTML = "O";
-    p2Choices.push(4);
-    console.log(p2Choices);
+    box5.push(2);
+    console.log("p2 chose box 5");
   }
+  checkWin();
   turn();
 };
 
@@ -98,29 +113,32 @@ midRight.onclick = function() {
   console.log("clicked middle right");
   if (player == 1) {
     midRight.innerHTML = "X";
-    p1Choices.push(5);
-    console.log(p1Choices);
+    box6.push(1);
+    console.log("p1 chose box 6");
   }
   else {
     midRight.innerHTML = "O";
-    p2Choices.push(5);
-    console.log(p2Choices);
+    box6.push(2);
+    console.log("p2 chose box 6");
   }
+  checkWin();
   turn();
+  
 };
 
 botLeft.onclick = function() {
   console.log("clicked bottom left");
   if (player == 1) {
     botLeft.innerHTML = "X";
-    p1Choices.push(6);
-    console.log(p1Choices);
+    box7.push(1);
+    console.log("p1 chose box 7");
   }
   else {
     botLeft.innerHTML = "O";
-    p2Choices.push(6);
-    console.log(p2Choices);
+    box7.push(2);
+    console.log("p2 chose box 8");
   }
+  checkWin();
   turn();
 };
 
@@ -128,15 +146,16 @@ botMid.onclick = function() {
   console.log("clicked bottom middle");
   if (player == 1) {
     botMid.innerHTML = "X";
-    p1Choices.push(7);
-    console.log(p1Choices);
+    box8.push(1);
+    console.log("p1 chose box 8");
   }
   else {
     botMid.innerHTML = "O";
-    p2Choices.push(7);
-    console.log(p2Choices);
+    box8.push(2);
+    console.log("p2 chose box 8");
 
   }
+  checkWin();
   turn();
 };
 
@@ -144,17 +163,17 @@ botRight.onclick = function() {
   console.log("clicked bottom right");
   if (player == 1) {
     botRight.innerHTML = "X";
-    p1Choices.push(8);
-    console.log(p1Choices);
+    box9.push(1);
+    console.log("p1 chose box 9");
   }
   else {
     botRight.innerHTML = "O";
-    p2Choices.push(8);
-    console.log(p2Choices);
+    box9.push(2);
+    console.log("p2 chose box 9");
   }
+  checkWin();
   turn();
 };
-
 
 // Intended to allow for switching players. 
 
@@ -170,7 +189,65 @@ function turn() {
   }
 }
 
-
 // Game logic determines winner by checking if p1 or p2Choices arrays contain the appropriate numbers. 
 
-  
+function checkWin(){
+  // horizontal wins
+  if((box1[0] === 1) && (box2[0] === 1) && (box3[0] === 1)) {
+    alert("player 1 wins");
+  }
+  if((box1[0] === 2) && (box2[0] === 2) && (box3[0] === 2)) {
+    alert("player 2 wins");
+  }
+  if((box4[0] === 1) && (box5[0] === 1) && (box6[0] === 1)) {
+    alert("player 1 wins");
+  }  
+  if((box4[0] === 2) && (box5[0] === 2) && (box6[0] === 2)) {
+    alert("player 2 wins");  
+  }  
+  if((box7[0] === 1) && (box8[0] === 1) && (box9[0] === 1)) {
+    alert("player 1 wins");
+  }
+  if((box7[0] === 2) && (box8[0] === 2) && (box9[0] === 2)) {
+    alert("player 2 wins");
+   }
+
+   // vertical wins
+
+  if((box1[0] === 1) && (box4[0] === 1) && (box7[0] === 1)) {
+    alert("player 1 wins");
+  }
+  if((box1[0] === 2) && (box4[0] === 2) && (box7[0] === 2)) {
+    alert("player 2 wins");
+  }
+  if((box2[0] === 1) && (box5[0] === 1) && (box8[0] === 1)) {
+    alert("player 1 wins");
+  }  
+  if((box2[0] === 2) && (box5[0] === 2) && (box8[0] === 2)) {
+    alert("player 2 wins");  
+  }  
+  if((box3[0] === 1) && (box6[0] === 1) && (box9[0] === 1)) {
+    alert("player 1 wins");
+  }
+  if((box3[0] === 2) && (box6[0] === 2) && (box9[0] === 2)) {
+    alert("player 2 wins");
+   }
+
+   // diagonal wins
+
+   if((box1[0] === 1) && (box5[0] === 1) && (box9[0] === 1)) {
+    alert("player 1 wins");
+  }
+  if((box1[0] === 2) && (box5[0] === 2) && (box9[0] === 2)) {
+    alert("player 2 wins");
+  }
+  if((box3[0] === 1) && (box5[0] === 1) && (box7[0] === 1)) {
+    alert("player 1 wins");
+  }  
+  if((box3[0] === 2) && (box5[0] === 2) && (box7[0] === 2)) {
+    alert("player 2 wins");  
+  }  
+}   
+
+ //takes taken boxes out of the mix
+
