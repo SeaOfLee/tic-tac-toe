@@ -211,6 +211,7 @@ function turn() {
 var p1Won = false;
 var p2Won = false;
 
+
 function checkWin(){
   // checks for horizontal wins
   if((box1[0] === 1) && (box2[0] === 1) && (box3[0] === 1)) {
@@ -283,12 +284,12 @@ function p2Wins() {
  } 
 
 function clearBoxes() {
-for(i = 0; i < allBoxes.length-1; i++)
+for(i = 0; i < allBoxes.length; i++)
   allBoxes[i][0] = [];
 }
 
 function resetBoxes() {
-  for(i=0; i < boxes.length -1; i++) {
+  for(i=0; i < boxes.length; i++) {
     boxes[i].innerHTML = "";
   }
  } 
