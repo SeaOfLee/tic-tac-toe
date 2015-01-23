@@ -288,13 +288,18 @@ for(i = 0; i < allBoxes.length-1; i++)
 }
 
 function resetBoxes() {
-  topLeft.innerHTML = "";
-  topMid.innerHTML = "";
-  topRight.innerHTML = "";
-  midLeft.innerHTML = "";
-  midMid.innerHTML = "";
-  midRight.innerHTML = "";
-  botLeft.innerHTML = "";
-  botMid.innerHTML = "";
-  botRight.innerHTML = "";
-}
+  for(i=0; i < boxes.length -1; i++) {
+    boxes[i].innerHTML = "";
+  }
+ } 
+
+  // topLeft.innerHTML = "";
+  // topMid.innerHTML = "";
+  // topRight.innerHTML = "";
+  // midLeft.innerHTML = "";
+  // midMid.innerHTML = "";
+  // midRight.innerHTML = "";
+  // botLeft.innerHTML = "";
+  // botMid.innerHTML = "";
+  // botRight.innerHTML = "";
+
