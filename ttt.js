@@ -207,10 +207,7 @@ function turn() {
   }
 }
 
-// Game logic determines winner by checking if p1 or p2Choices arrays contain the appropriate numbers. 
-var p1Won = false;
-var p2Won = false;
-
+// Game logic determines winner by checking if individual box arrays contain certain combinations
 
 function checkWin(){
   // checks for horizontal wins
@@ -270,24 +267,35 @@ function checkWin(){
   }  
 }
 
+// Intended to be used as a 'reset' function for onclick event handlers. 
+var p1Won = false;
+var p2Won = false;
+
+// gets incremented every time p1/p2Wins function runs. 
+var p1WinTotal = 0;
+var p2WinTotal = 0;
+
 
 function p1Wins() {
   p1Won = true;
   alert("Player 1 Wins!");
   roundNum = 0;
+  p1WinTotal++;
 }
 
 function p2Wins() {
   p2Won = true;
   alert("Player 2 Wins!");
   roundNum = 0;
+  p2WinTotal++;
  } 
 
+// clears the score arrays
 function clearBoxes() {
 for(i = 0; i < allBoxes.length; i++)
   allBoxes[i][0] = [];
 }
-
+// clears the "X" and "O" HTML from board
 function resetBoxes() {
   for(i=0; i < boxes.length; i++) {
     boxes[i].innerHTML = "";
