@@ -61,6 +61,7 @@ topMid.onclick = function() {
     box2.push(2);
     console.log("p2 chose box 2");
   }
+  roundNum++;
   this.onclick = null;
   checkWin();
   turn();
@@ -78,6 +79,7 @@ topRight.onclick = function() {
     box3.push(2);
     console.log("p2 chose box 3");
   }
+  roundNum++;
   this.onclick = null;
   checkWin();
   turn();
@@ -95,6 +97,7 @@ midLeft.onclick = function() {
     box4.push(2);
     console.log("p2 chose box 4");
   }
+  roundNum++;
   this.onclick = null;
   checkWin();
   turn();
@@ -112,6 +115,7 @@ midMid.onclick = function() {
     box5.push(2);
     console.log("p2 chose box 5");
   }
+  roundNum++;
   this.onclick = null;
   checkWin();
   turn();
@@ -129,6 +133,7 @@ midRight.onclick = function() {
     box6.push(2);
     console.log("p2 chose box 6");
   }
+  roundNum++;
   this.onclick = null;
   checkWin();
   turn();
@@ -147,6 +152,7 @@ botLeft.onclick = function() {
     box7.push(2);
     console.log("p2 chose box 8");
   }
+  roundNum++;
   this.onclick = null;
   checkWin();
   turn();
@@ -165,6 +171,7 @@ botMid.onclick = function() {
     console.log("p2 chose box 8");
 
   }
+  roundNum++;
   this.onclick = null;
   checkWin();
   turn();
@@ -182,6 +189,7 @@ botRight.onclick = function() {
     box9.push(2);
     console.log("p2 chose box 9");
   }
+  roundNum++;
   this.onclick = null;
   checkWin();
   turn();
