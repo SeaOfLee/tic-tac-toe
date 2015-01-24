@@ -37,7 +37,8 @@ var boxes = document.getElementsByClassName("boxes");
 //     } else {
 //         this.innerHTML = "O";
 //     }
-
+// keeps track of # of turns, gets incremented after every choice is made. 
+var roundNum = 0;
 
 topLeft.onclick = function() {
   console.log("clicked top left");
@@ -53,6 +54,7 @@ topLeft.onclick = function() {
     console.log("p2 chose box 1");
     turn();
   }
+  roundNum++;
   checkWin();
 };
 
@@ -70,6 +72,7 @@ topMid.onclick = function() {
     console.log("p2 chose box 2");
     turn();
   }
+  roundNum++;
   checkWin();
 };
 
@@ -87,6 +90,7 @@ topRight.onclick = function() {
     console.log("p2 chose box 3");
     turn();
   }
+  roundNum++;
   checkWin();
 };
 
@@ -104,6 +108,7 @@ midLeft.onclick = function() {
     console.log("p2 chose box 4");
     turn();
   }
+  roundNum++;
   checkWin();
   };
 
@@ -121,6 +126,7 @@ midMid.onclick = function() {
     console.log("p2 chose box 5");
     turn();
   }
+  roundNum++;
   checkWin();
 };
 
@@ -138,6 +144,7 @@ midRight.onclick = function() {
     console.log("p2 chose box 6");
     turn();
   }
+  roundNum++;
   checkWin();
   
 };
@@ -156,6 +163,7 @@ botLeft.onclick = function() {
     console.log("p2 chose box 8");
     turn();
   }
+  roundNum++;
   checkWin();
 };
 
@@ -174,6 +182,7 @@ botMid.onclick = function() {
     turn();
 
   }
+  roundNum++;
   checkWin();
 };
 
@@ -191,6 +200,7 @@ botRight.onclick = function() {
     console.log("p2 chose box 9");
     turn();
   }
+  roundNum++;
   checkWin();
 };
 
@@ -265,16 +275,19 @@ function checkWin(){
   }  
   if((box3[0] === 2) && (box5[0] === 2) && (box7[0] === 2)) {
     p2Wins();
-  }  
+  }
+  // checks tie condition by comparing roundNum and game status.
+  if((roundNum == 9) && ((p1Won = false) && (p2Won = false))) {
+    tie();
+  }
 }
-
-// Intended to be used as a 'reset' function for onclick event handlers. 
-var p1Won = false;
-var p2Won = false;
-
 // gets incremented every time p1/p2Wins function runs. 
+
 var p1WinTotal = 0;
 var p2WinTotal = 0;
+
+var p1Won = false;
+var p2Won = false;
 
 
 function p1Wins() {
@@ -282,6 +295,9 @@ function p1Wins() {
   alert("Player 1 Wins!");
   roundNum = 0;
   p1WinTotal++;
+  clearBoxes();
+  resetBoxes();
+  p1Won = false;
 }
 
 function p2Wins() {
@@ -289,7 +305,16 @@ function p2Wins() {
   alert("Player 2 Wins!");
   roundNum = 0;
   p2WinTotal++;
+  clearBoxes();
+  resetBoxes();
+  p2Won = false;
  } 
+
+ function tie() {
+  alert("Tie!");
+  clearBoxes();
+  resetBoxes();
+ }
 
 // clears the score arrays
 function clearBoxes() {
