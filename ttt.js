@@ -38,159 +38,160 @@ var boxes = document.getElementsByClassName("boxes");
 //         this.innerHTML = "O";
 //     }
 
+
 topLeft.onclick = function() {
   console.log("clicked top left");
-  if (player == 1) {
+  if((player == 1) && (box1[0] == undefined)) {
     topLeft.innerHTML = "X";
     box1.push(1);
     console.log("p1 chose box 1");
+    turn();
   }
-  else {
+  else if ((player !== 1) && (box1[0] == undefined)) {
     topLeft.innerHTML = "O";
     box1.push(2);
     console.log("p2 chose box 1");
+    turn();
   }
-  this.onclick = null;
   checkWin();
-  turn();
 };
 
 topMid.onclick = function() {
   console.log("clicked top middle");
-  if (player == 1) {
+  if((player == 1) && (box2[0] == undefined)) {
     topMid.innerHTML = "X";
     box2.push(1);
     console.log("p1 chose box 2");
+    turn();
   }
-  else {
+  else if((player !== 1) && (box2[0] == undefined)) {
     topMid.innerHTML = "O";
     box2.push(2);
     console.log("p2 chose box 2");
+    turn();
   }
-  this.onclick = null;
   checkWin();
-  turn();
 };
 
 topRight.onclick = function() {
   console.log("clicked top right");
-  if (player == 1) {
+  if((player == 1) && (box3[0] == undefined)) {
     topRight.innerHTML = "X";
     box3.push(1);
     console.log("p1 chose box 3");
+    turn();
   }
-  else {
+  else if((player !== 1) && (box3[0] == undefined)) {
     topRight.innerHTML = "O";
     box3.push(2);
     console.log("p2 chose box 3");
+    turn();
   }
-  this.onclick = null;
   checkWin();
-  turn();
 };
 
 midLeft.onclick = function() {
   console.log("clicked middle left");
-  if (player == 1) {
+  if((player == 1) && (box4[0] == undefined)) {
     midLeft.innerHTML = "X";
     box4.push(1);
     console.log("p1 chose box 4");
+    turn();
   }
-  else {
+  else if((player !== 1) && (box4[0] == undefined)) {
     midLeft.innerHTML = "O";
     box4.push(2);
     console.log("p2 chose box 4");
+    turn();
   }
-  this.onclick = null;
   checkWin();
-  turn();
   };
 
 midMid.onclick = function() {
   console.log("clicked middle square");
-  if (player == 1) {
+  if((player == 1) && (box5[0] == undefined)) {
     midMid.innerHTML = "X";
     box5.push(1);
     console.log("p1 chose box 5");
+    turn();
   }
-  else {
+  else if((player !== 1) && (box5[0] == undefined)) {
     midMid.innerHTML = "O";
     box5.push(2);
     console.log("p2 chose box 5");
+    turn();
   }
-  this.onclick = null;
   checkWin();
-  turn();
 };
 
 midRight.onclick = function() {
   console.log("clicked middle right");
-  if (player == 1) {
+  if((player == 1) && (box6[0] == undefined)) {
     midRight.innerHTML = "X";
     box6.push(1);
     console.log("p1 chose box 6");
+    turn();
   }
-  else {
+  else if((player !== 1) && (box6[0] == undefined)) {
     midRight.innerHTML = "O";
     box6.push(2);
     console.log("p2 chose box 6");
+    turn();
   }
-  this.onclick = null;
   checkWin();
-  turn();
   
 };
 
 botLeft.onclick = function() {
   console.log("clicked bottom left");
-  if (player == 1) {
+  if((player == 1) && (box7[0] == undefined)) {
     botLeft.innerHTML = "X";
     box7.push(1);
     console.log("p1 chose box 7");
+    turn();
   }
-  else {
+  else if((player !== 1) && (box7[0] == undefined)) {
     botLeft.innerHTML = "O";
     box7.push(2);
     console.log("p2 chose box 8");
+    turn();
   }
-  this.onclick = null;
   checkWin();
-  turn();
 };
 
 botMid.onclick = function() {
   console.log("clicked bottom middle");
-  if (player == 1) {
+  if((player == 1) && (box8[0] == undefined)) {
     botMid.innerHTML = "X";
     box8.push(1);
     console.log("p1 chose box 8");
+    turn();
   }
-  else {
+  else if((player !== 1) && (box8[0] == undefined)) {
     botMid.innerHTML = "O";
     box8.push(2);
     console.log("p2 chose box 8");
+    turn();
 
   }
-  this.onclick = null;
   checkWin();
-  turn();
 };
 
 botRight.onclick = function() {
   console.log("clicked bottom right");
-  if (player == 1) {
+  if((player == 1) && (box9[0] == undefined)) {
     botRight.innerHTML = "X";
     box9.push(1);
     console.log("p1 chose box 9");
+    turn();
   }
-  else {
+  else if((player !== 1) && (box9[0] == undefined)) {
     botRight.innerHTML = "O";
     box9.push(2);
     console.log("p2 chose box 9");
+    turn();
   }
-  this.onclick = null;
   checkWin();
-  turn();
 };
 
 // Intended to allow for switching players. 
@@ -293,22 +294,11 @@ function p2Wins() {
 // clears the score arrays
 function clearBoxes() {
 for(i = 0; i < allBoxes.length; i++)
-  allBoxes[i][0] = [];
+  allBoxes[i][0] = undefined;
 }
 // clears the "X" and "O" HTML from board
 function resetBoxes() {
   for(i=0; i < boxes.length; i++) {
-    boxes[i].innerHTML = "";
+    boxes[i].innerHTML = [];
   }
  } 
-
-  // topLeft.innerHTML = "";
-  // topMid.innerHTML = "";
-  // topRight.innerHTML = "";
-  // midLeft.innerHTML = "";
-  // midMid.innerHTML = "";
-  // midRight.innerHTML = "";
-  // botLeft.innerHTML = "";
-  // botMid.innerHTML = "";
-  // botRight.innerHTML = "";
-
