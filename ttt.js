@@ -294,7 +294,7 @@ function p2Wins() {
 // clears the score arrays
 function clearBoxes() {
 for(i = 0; i < allBoxes.length; i++)
-  allBoxes[i][0] = undefined;
+  allBoxes[i].pop();
 }
 // clears the "X" and "O" HTML from board
 function resetBoxes() {
