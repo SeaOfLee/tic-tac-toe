@@ -316,6 +316,6 @@ for(i = 0; i < allBoxes.length; i++) {
 // clears the "X" and "O" HTML from board
 function resetBoxes() {
   for(i=0; i < boxes.length; i++) {
-    boxes[i].innerHTML = [];
+    boxes[i].innerHTML = "&nbsp";
   }
  } 

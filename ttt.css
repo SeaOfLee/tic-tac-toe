@@ -1,5 +1,5 @@
 #container {
-  background-color: #CCCCCC;
+  /*background-color: #CCCCCC;*/
   height: 800px;
   width: 800px;
   margin: auto;
@@ -10,13 +10,13 @@
   width: 600px;
   height: 100px;
   margin: auto;
-  background-color: #FFFFFF;
+  /*background-color: #FFFFFF;*/
 }
 
 #main {
   width: 600px;
   height: 600px;
-  background-color: #CCFFCC;
+  /*background-color: #CCFFCC;*/
   margin: 0px auto;
 }
 
@@ -28,6 +28,7 @@
   /*float: left;*/
   /*margin: 0px auto;*/
   border-radius: 25px;
+  padding: 1px;
 }
 
 .boxes {
@@ -36,15 +37,16 @@
   margin: 5px 0px 0px 5px;
 }
 
-#horizontal1 {
+/*#horizontal1 {
   position: absolute;
   width: 600px;
   height: 2px;
   background-color: black;
   margin-left: 100px;
-  margin-top: 200px;
+  margin-top: 200px;*/
 }
 .boxes p {
   margin-bottom: 5px;
   display: inline-block;
 }
+
