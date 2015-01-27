@@ -17,59 +17,24 @@
   width: 600px;
   height: 600px;
   background-color: #CCFFCC;
-  margin: auto;
+  margin: 0px auto;
 }
 
 #main div {
-  width: 200px;
-  height: 200px;
+  width: 190px;
+  height: 190px;
   background-color: #33CCFF;
   display: inline-block;
-  float: left;
-  /*border-radius: 25px;*/
+  /*float: left;*/
+  /*margin: 0px auto;*/
+  border-radius: 25px;
 }
 
 .boxes {
   text-align: center;
   font-size: 80px;
+  margin: 5px 0px 0px 5px;
 }
-
-/*#topLeft {
-  border-bottom: 2px solid white;
-  border-right: 2px solid white;
-}*/
-
-/*#topMid {
-  clear: right;
-}
-
-#topRight {
-  float: right;
-}
-
-#midLeft {
-  float: left;
-}
-
-#midMid {
-  clear: right;
-}
-
-#midRight {
-  float: right;
-}
-
-#botLeft {
-  float: left;
-}
-
-#botMid {
-  clear: right;
-}
-
-#botRight {
-  float: right;
-}*/
 
 #horizontal1 {
   position: absolute;
@@ -78,4 +43,8 @@
   background-color: black;
   margin-left: 100px;
   margin-top: 200px;
+}
+.boxes p {
+  margin-bottom: 5px;
+  display: inline-block;
 }

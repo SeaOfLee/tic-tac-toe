@@ -288,6 +288,7 @@ function p1Wins() {
   clearBoxes();
   resetBoxes();
   p1Won = false;
+  player = 1;
 }
 
 function p2Wins() {
