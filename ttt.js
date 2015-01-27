@@ -27,19 +27,11 @@ var botLeft = document.getElementById("botLeft");
 var botMid = document.getElementById("botMid");
 var botRight = document.getElementById("botRight");
 var boxes = document.getElementsByClassName("boxes");
-
-//uses onclick event handler to fill "empty" divs with X and O.
-//Click also pushes corresponding number into p1/p2Choices arrays.  
-
-// function clickedSquare() {
-//     if(player == 1) {
-//         this.innerHTML = "X";
-//     } else {
-//         this.innerHTML = "O";
-//     }
 // keeps track of # of turns, gets incremented after every choice is made. 
 var roundNum = 0;
 
+//uses onclick event handler to fill "empty" divs with X and O.
+//pushes 1 or 2 into box arrays to keep track of score.
 topLeft.onclick = function() {
   console.log("clicked top left");
   if((player == 1) && (box1[0] == undefined)) {
@@ -219,6 +211,8 @@ function turn() {
 }
 
 // Game logic determines winner by checking if individual box arrays contain certain combinations
+var p1Won = false;
+var p2Won = false;
 
 function checkWin(){
   // checks for horizontal wins
@@ -277,18 +271,14 @@ function checkWin(){
     p2Wins();
   }
   // checks tie condition by comparing roundNum and game status.
-  if((roundNum == 9) && ((p1Won = false) && (p2Won = false))) {
+  if((roundNum == 9) && (p1Won === false) && (p2Won === false)) {
     tie();
   }
-}
+} 
 // gets incremented every time p1/p2Wins function runs. 
 
 var p1WinTotal = 0;
 var p2WinTotal = 0;
-
-var p1Won = false;
-var p2Won = false;
-
 
 function p1Wins() {
   p1Won = true;
@@ -318,8 +308,9 @@ function p2Wins() {
 
 // clears the score arrays
 function clearBoxes() {
-for(i = 0; i < allBoxes.length; i++)
+for(i = 0; i < allBoxes.length; i++) {
   allBoxes[i].pop();
+  }
 }
 // clears the "X" and "O" HTML from board
 function resetBoxes() {
