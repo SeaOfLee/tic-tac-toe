@@ -1,3 +1,7 @@
+var icons = {
+ p1Icon: "images/X.png",
+ p2Icon: "images/O.png"
+};
 
 // declares empty arrays that will store player choices
 
@@ -313,9 +317,28 @@ for(i = 0; i < allBoxes.length; i++) {
   allBoxes[i].pop();
   }
 }
-// clears the "X" and "O" HTML from board
+// clears the "X" and "O" HTML from board, replaces X or O with &nbsp
 function resetBoxes() {
   for(i=0; i < boxes.length; i++) {
     boxes[i].innerHTML = "&nbsp";
   }
  } 
+
+//  function makeChoice(){
+//   for(i = 0; i < allBoxes.length; i++) {
+//     if((player == 1) && (allBoxes[i][0] == undefined)) {
+//       this.innerHTML = "X";
+//       allBoxes[i][0].push(1);
+//       console.log("p1 chose box " + allBoxes[i]);
+//       turn();
+//     }
+//     else if ((player !== 1) && (allBoxes[i][0] == undefined)) {
+//       this.innerHTML = "O";
+//       allBoxes[i][0].push(2);
+//       console.log("p2 chose box " + allBoxes[i]);
+//       turn();
+//     }
+//     roundNum++;
+//     checkWin();
+//   }
+// }
